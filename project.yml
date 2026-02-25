@@ -1,0 +1,42 @@
+name: TasksPanel
+options:
+  bundleIdPrefix: com.rreilly
+  deploymentTarget:
+    macOS: "14.0"
+  defaultConfig: Debug
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    PRODUCT_BUNDLE_IDENTIFIER: com.rreilly.tasks-panel
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  TasksPanel:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: TasksPanel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rreilly.tasks-panel
+        PRODUCT_NAME: TasksPanel
+        INFOPLIST_FILE: TasksPanel/Info.plist
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_IDENTITY: ""
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+    entitlements:
+      path: TasksPanel/TasksPanel.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+    info:
+      path: TasksPanel/Info.plist
+      properties:
+        CFBundleName: Tasks
+        CFBundleDisplayName: Tasks
+        LSUIElement: true
+        NSPrincipalClass: NSApplication
